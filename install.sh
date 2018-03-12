@@ -25,7 +25,7 @@ yum install -y gcc wget vim gcc-c++ openssl-devel bash-completion
 
 ## download
 wget "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz"
-wget "http://linux.stanford.edu/pub/exim/pcre/pcre-${PCRE_VERSION}.tar.gz"
+wget  --no-check-certificate "http://linux.stanford.edu/pub/exim/pcre/pcre-${PCRE_VERSION}.tar.gz"
 wget "http://zlib.net/zlib-${ZLIB_VERSION}.tar.gz"
 
 
