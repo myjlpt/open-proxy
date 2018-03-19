@@ -11,7 +11,7 @@ server {
 
 		sub_filter_once off;
 		sub_filter_types text; 
-		sub_filter truth.atspace.eu 198.13.56.205:10000;
+		sub_filter truth.atspace.eu local_server_ip:10000;
 	}
 }
 

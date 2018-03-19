@@ -4,7 +4,7 @@ ip_addr=$(ifconfig | grep "inet addr" | sed -n 1p | cut -d':' -f2 | cut -d' ' -f
 
 for file in $(ls sites/*); do
 	echo $file
-	sed "s/$ip_addr/local_server_ip/g" $file
+	sed -i "s/$ip_addr/local_server_ip/g" $file
 done
 
 

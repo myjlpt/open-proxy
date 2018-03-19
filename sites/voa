@@ -15,8 +15,8 @@ server {
 
 		sub_filter_once off;
 		sub_filter_types text text/javascript; 
-		sub_filter https://gdb.voanews.com http://198.13.56.205:9701;
-		sub_filter https://av.voanews.com http://198.13.56.205:9702;
+		sub_filter https://gdb.voanews.com http://local_server_ip:9701;
+		sub_filter https://av.voanews.com http://local_server_ip:9702;
 	}
 }
 

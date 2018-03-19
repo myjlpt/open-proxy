@@ -7,7 +7,7 @@ server {
 	}
 	
 	#location /watch {
-	#	rewrite ^(.*) http://198.13.56.205:9999$1;
+	#	rewrite ^(.*) http://local_server_ip:9999$1;
 	#}
 
 	location / {
@@ -27,17 +27,15 @@ server {
 
 		sub_filter_once off;
 		sub_filter_types text text/css text/javascript application/json;
-		sub_filter www.youtube.com 198.13.56.205:8700;
-		sub_filter i.ytimg.com 198.13.56.205:8701;
-		sub_filter yt3.ggpht.com 198.13.56.205:8702;
-		sub_filter s.ytimg.com 198.13.56.205:8703;
+		sub_filter www.youtube.com local_server_ip:8700;
+		sub_filter i.ytimg.com local_server_ip:8701;
+		sub_filter yt3.ggpht.com local_server_ip:8702;
+		sub_filter s.ytimg.com local_server_ip:8703;
 
-		#sub_filter /watch?v= http://198.13.56.205:9999/watch?v=;
-		#sub_filter /watch?v= http://159.89.204.253:9999/watch?v=;
-		sub_filter /watch?v= http://207.246.105.31:9999/watch?v=;
+		sub_filter /watch?v= http://local_server_ip:9999/watch?v=;
 
 		# fail
-		sub_filter www.google.com 198.13.56.205:8700;
+		sub_filter www.google.com local_server_ip:8700;
 		sub_filter https http;
 		sub_filter base.js noexist.js;
 		#sub_filter network.js noexist.js;
@@ -47,7 +45,7 @@ server {
 	}
 
 	location @deny_mobile {
-		rewrite ^(.*) http://198.13.56.205:9999/mobile;
+		rewrite ^(.*) http://local_server_ip:9999/mobile;
 	}
 }
 
