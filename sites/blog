@@ -1,0 +1,18 @@
+server {
+	listen	10000;
+
+	location / {
+		proxy_pass http://truth.atspace.eu;
+		proxy_set_header Host truth.atspace.eu;
+		proxy_set_header Referer http://truth.atspace.eu;
+		proxy_set_header User-Agent $http_user_agent;
+
+		include headers.conf;
+
+		sub_filter_once off;
+		sub_filter_types text; 
+		sub_filter truth.atspace.eu 198.13.56.205:10000;
+	}
+}
+
+

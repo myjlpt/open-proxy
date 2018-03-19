@@ -25,9 +25,9 @@ yum install -y gcc wget vim gcc-c++ openssl-devel bash-completion
 
 ## download
 wget "http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz"
-wget  --no-check-certificate "http://linux.stanford.edu/pub/exim/pcre/pcre-${PCRE_VERSION}.tar.gz"
 wget "http://zlib.net/zlib-${ZLIB_VERSION}.tar.gz"
-
+wget --no-check-certificate "https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz"
+git clone https://github.com/kaltura/nginx-vod-module.git
 
 ## install
 tar xzf nginx-${NGINX_VERSION}.tar.gz && \
@@ -59,7 +59,10 @@ cd nginx-${NGINX_VERSION} && \
 	--with-file-aio  \
 	--with-http_v2_module  \
 	--with-pcre=../pcre-${PCRE_VERSION} \
-	--with-zlib=../zlib-${ZLIB_VERSION}
+	--with-zlib=../zlib-${ZLIB_VERSION} \
+	--add-module=../nginx-vod-module \
+	--with-file-aio \
+	--with-threads 
 if [ $? -ne 0 ]; then
 	echo "failed to compile nginx and modules, please check the installation log"
 	exit 1
@@ -104,6 +107,7 @@ for s in $targets; do
 	echo -e "http://$server_ip:$proxy_port  \t->\t$org_url"
 done | sort
 echo
+
 
 
 

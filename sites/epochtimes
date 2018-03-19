@@ -2,7 +2,7 @@
 server {
 	listen	80;
 	
-	if ($http_user_agent ~ "qihoobot|Baiduspider|Googlebot|-Google|YandexBot|^$" ) {
+	if ($http_user_agent ~ "BUbiNG|bot|Bot|spider|Spider|qihoobot|Baiduspider|Googlebot|-Google|YandexBot|^$" ) {
 		return 403; 
 	}
 
@@ -15,19 +15,16 @@ server {
 		include headers.conf;
 
 		sub_filter_once off;
-		sub_filter_types text text/javascript; 
-		sub_filter i.epochtimes.com local_server_ip;
-		sub_filter www.epochtimes.com local_server_ip;
-		sub_filter tuidang.epochtimes.com local_server_ip:82;
-		sub_filter www.ntdtv.com local_server_ip:8000;
-		sub_filter imgs.ntdtv.com local_server_ip:8001;
-		sub_filter media5.ntdtv.com local_server_ip:8002;
-		sub_filter inew3.ntdtv.com local_server_ip:8003;
-		sub_filter https://ajax.googleapis.com http://local_server_ip:81;
-		sub_filter https://www.youtube.com/embed/ http://local_server_ip:9999/embed/;
-		sub_filter /i6/ http://local_server_ip:83/i6/;
-		#sub_filter href=/i6/ href=http://local_server_ip:83/i6/;
-		#sub_filter src=/i6/ src=http://local_server_ip:83/i6/;
+		sub_filter_types text; 
+		sub_filter i.epochtimes.com 198.13.56.205;
+		sub_filter www.epochtimes.com 198.13.56.205;
+		sub_filter www.ntdtv.com 198.13.56.205:8000;
+		sub_filter imgs.ntdtv.com 198.13.56.205:8001;
+		sub_filter media5.ntdtv.com 198.13.56.205:8002;
+		sub_filter inew3.ntdtv.com 198.13.56.205:8003;
+		sub_filter https://ajax.googleapis.com http://198.13.56.205:81;
+		sub_filter https://vembed.epochtimes.com http://198.13.56.205:82;
+		sub_filter https://www.youtube.com/embed/ http://198.13.56.205:9999/embed/;
 	}
 	
 	location /info {
@@ -36,6 +33,16 @@ server {
 	
 	location /videos {
 		root content;
+	}
+
+	location /hls {
+		root content;
+		add_header Access-Control-Allow-Origin *;
+	}
+
+	location /player {
+		root content;
+		add_header Access-Control-Allow-Origin *;
 	}
 
 	error_page	 500 502 503 504  /50x.html;
@@ -59,27 +66,28 @@ server {
 	listen	82;
 	
 	location / {
-		proxy_pass http://tuidang.epochtimes.com;
-		proxy_set_header Host tuidang.epochtimes.com;
-
+		proxy_pass https://vembed.epochtimes.com;
 		include headers.conf;
-
 		sub_filter_once off;
 		sub_filter_types text; 
-		sub_filter www.epochtimes.com local_server_ip;
-		sub_filter //epochtimes.com //local_server_ip;
-		sub_filter tuidang.epochtimes.com local_server_ip:82;
+		sub_filter ymk.ntd.tv 198.13.56.205:83;
+		sub_filter vsa.ntd.tv 198.13.56.205:84;
 	}
 }
-
 
 server {
 	listen	83;
 	
 	location / {
-		proxy_pass http://img.epochtimes.com;
+		proxy_pass http://ymk.ntd.tv;
 	}
 }
 
-
+server {
+	listen	84;
+	
+	location / {
+		proxy_pass http://vsa.ntd.tv;
+	}
+}
 

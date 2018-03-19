@@ -1,0 +1,38 @@
+server {
+	listen 9700;
+	
+	if ($http_user_agent ~ "qihoobot|Baiduspider|Googlebot|-Google|YandexBot|^$" ) {
+		return 403; 
+	}
+
+	location / {
+		proxy_pass https://www.voachinese.com;
+		proxy_set_header Host www.voachinese.com;
+		proxy_set_header Referer https://www.voachinese.com;
+		proxy_set_header User-Agent $http_user_agent;
+
+		include headers.conf;
+
+		sub_filter_once off;
+		sub_filter_types text text/javascript; 
+		sub_filter https://gdb.voanews.com http://198.13.56.205:9701;
+		sub_filter https://av.voanews.com http://198.13.56.205:9702;
+	}
+}
+
+server {
+	listen	9701;
+	
+	location / {
+		proxy_pass https://gdb.voanews.com;
+	}
+}
+
+server {
+	listen	9702;
+	
+	location / {
+		proxy_pass https://av.voanews.com;
+	}
+}
+

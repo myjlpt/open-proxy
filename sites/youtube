@@ -1,13 +1,19 @@
 
 server {
 	listen	8700;
-	
-	location /watch {
-		rewrite ^(.*) http://local_server_ip:9999$1;
+
+	if ($http_user_agent ~ "bot|Bot|spider|Spider|qihoobot|Baiduspider|Googlebot|-Google|YandexBot|^$" ) {
+		return 403; 
 	}
+	
+	#location /watch {
+	#	rewrite ^(.*) http://198.13.56.205:9999$1;
+	#}
 
 	location / {
 		proxy_pass https://www.youtube.com;
+		proxy_set_header Host www.youtube.com;
+		proxy_set_header Referer https://www.youtube.com;
 		proxy_redirect off;
 
 		proxy_buffer_size	64k;
@@ -17,26 +23,31 @@ server {
 		proxy_headers_hash_bucket_size 6400;
 
 		include headers.conf;
-		#proxy_set_header User-Agent "Chrome/63.0.3239.108 Safari/537.36";
+		#proxy_set_header User-Agent "Firefox/58.0";
 
 		sub_filter_once off;
-		sub_filter_types text text/javascript application/json;
-		sub_filter www.youtube.com local_server_ip:8700;
-		sub_filter i.ytimg.com local_server_ip:8701;
-		sub_filter yt3.ggpht.com local_server_ip:8702;
-		sub_filter s.ytimg.com local_server_ip:8701;
+		sub_filter_types text text/css text/javascript application/json;
+		sub_filter www.youtube.com 198.13.56.205:8700;
+		sub_filter i.ytimg.com 198.13.56.205:8701;
+		sub_filter yt3.ggpht.com 198.13.56.205:8702;
+		sub_filter s.ytimg.com 198.13.56.205:8703;
+
+		#sub_filter /watch?v= http://198.13.56.205:9999/watch?v=;
+		#sub_filter /watch?v= http://159.89.204.253:9999/watch?v=;
+		sub_filter /watch?v= http://207.246.105.31:9999/watch?v=;
 
 		# fail
-		sub_filter www.google.com local_server_ip:8700;
+		sub_filter www.google.com 198.13.56.205:8700;
 		sub_filter https http;
 		sub_filter base.js noexist.js;
+		#sub_filter network.js noexist.js;
 
-        proxy_intercept_errors on;
-        error_page 301 302 = @deny_mobile;
-    }
+		proxy_intercept_errors on;
+		error_page 301 302 = @deny_mobile;
+	}
 
-    location @deny_mobile {
-		rewrite ^(.*) http://local_server_ip:9999/mobile;
+	location @deny_mobile {
+		rewrite ^(.*) http://198.13.56.205:9999/mobile;
 	}
 }
 
@@ -59,4 +70,16 @@ server {
 	}
 }
 
+
+server {
+	listen	8703;
+
+	location / {
+		proxy_pass https://s.ytimg.com;
+		proxy_set_header Host s.ytimg.com;
+
+		include headers.conf;
+		add_header Access-Control-Allow-Origin *;
+	}
+}
 
