@@ -1,6 +1,7 @@
 
 server {
 	listen	8300;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://qikan.minghui.org;
@@ -23,6 +24,7 @@ server {
 
 server {
 	listen	8301;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://package.minghui.org;
@@ -33,6 +35,7 @@ server {
 
 server {
 	listen	8302;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://pkg2.minghui.org;
@@ -43,6 +46,7 @@ server {
 
 server {
 	listen	8303;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://www.minghui.org;
@@ -64,6 +68,7 @@ server {
 
 server {
 	listen	8304;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://library.minghui.org;
@@ -85,6 +90,7 @@ server {
 
 server {
 	listen	8305;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://media.minghui.org;

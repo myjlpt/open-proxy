@@ -19,6 +19,8 @@ PCRE_VERSION=8.41
 ZLIB_VERSION=1.2.11
 NGX_CONF_DIR=/usr/local/nginx/conf
 
+mkdir -p /usr/local/nginx/content/cache
+
 ## install common tools
 yum install -y gcc wget vim gcc-c++ openssl-devel bash-completion
 

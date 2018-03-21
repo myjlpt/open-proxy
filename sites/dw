@@ -1,6 +1,7 @@
 
 server {
 	listen	9200;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://www.dw.com;
@@ -24,6 +25,7 @@ server {
 
 server {
 	listen	9220;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://m.dw.com;
@@ -46,6 +48,7 @@ server {
 
 server {
 	listen	9201;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://commons.dw.com;

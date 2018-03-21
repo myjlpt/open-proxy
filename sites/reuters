@@ -1,6 +1,7 @@
 
 server {
 	listen	9500;
+	include spider.conf;
 
 	location / {
 		proxy_pass https://cn.reuters.com;
@@ -27,6 +28,7 @@ server {
 
 server {
 	listen	9550;
+	include spider.conf;
 
 	location / {
 		proxy_pass https://www.reuters.com;
@@ -48,6 +50,7 @@ server {
 
 server {
 	listen 9501;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://static.reuters.com;

@@ -1,6 +1,7 @@
 
 server {
 	listen 7100;
+	include spider.conf;
 
 	location / {
 		proxy_pass https://www.bannedbook.org;
@@ -24,6 +25,7 @@ server {
 
 server {
 	listen 7101;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://m1.ablwang.com;

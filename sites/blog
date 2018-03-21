@@ -1,5 +1,6 @@
 server {
 	listen	10000;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://truth.atspace.eu;

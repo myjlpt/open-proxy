@@ -1,5 +1,6 @@
 server {
 	listen	9100;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://www.bbc.com;

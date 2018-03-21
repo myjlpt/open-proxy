@@ -1,6 +1,7 @@
 
 server {
 	listen	9600;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://cn.rfi.fr;
@@ -26,6 +27,7 @@ server {
 server {
 	listen	9601;
 	resolver 8.8.8.8;
+	include spider.conf;
 
 	location / {
 

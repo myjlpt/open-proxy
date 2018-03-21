@@ -1,10 +1,7 @@
 
 server {
 	listen 9300;
-
-	if ($http_user_agent ~ "qihoobot|Baiduspider|Googlebot-|-Google|Feedfetcher-Google|YandexBot|^$" ) {
-		return 403;
-	}
+	include spider.conf;
 
 	location / {
 		proxy_pass http://cn.wsj.com;
@@ -31,6 +28,7 @@ server {
 
 server {
 	listen	9301;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://s.wsj.net;
@@ -41,6 +39,7 @@ server {
 
 server {
 	listen	9302;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://m.wsj.net;
@@ -51,6 +50,7 @@ server {
 
 server {
 	listen	9303;
+	include spider.conf;
 
 	location / {
 		proxy_pass http://si.wsj.net;

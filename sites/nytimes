@@ -1,6 +1,7 @@
 
 server {
 	listen	9400;
+	include spider.conf;
 
 	location / {
 		proxy_pass https://cn.nytimes.com;
@@ -24,6 +25,7 @@ server {
 
 server {
 	listen	9401;
+	include spider.conf;
 
 	location / {
 		proxy_pass https://static01.nyt.com;
