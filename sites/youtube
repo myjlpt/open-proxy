@@ -34,8 +34,7 @@ server {
 		proxy_cache_valid  200 7d;
 		add_header Nginx-Cache $upstream_cache_status;
 
-		#sub_filter /watch?v= http://local_server_ip:9999/watch?v=;
-		#sub_filter /watch?v= http://207.246.105.31:9999/watch?v=;
+		sub_filter /watch?v= http://local_server_ip:9999/watch?v=;
 
 		# fail
 		sub_filter www.google.com local_server_ip:8700;
