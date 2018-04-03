@@ -1,5 +1,6 @@
 server {
 	listen 88;
+	include spider.conf;
 
 	# vod caches
 	vod_metadata_cache metadata_cache 128m;
