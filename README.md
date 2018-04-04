@@ -6,5 +6,6 @@
 
 
 
-##### 安装部署，请参考 [open-proxy 搭建教程](https://github.com/gfw-breaker/open-proxy/wiki#open-proxy-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B)
+##### 安装部署, 请参考 [open-proxy 搭建教程](https://github.com/gfw-breaker/open-proxy/wiki#open-proxy-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B)
 
+##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](https://gfw-breaker.github.io/fq.html)
