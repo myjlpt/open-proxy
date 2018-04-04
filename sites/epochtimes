@@ -39,14 +39,8 @@ server {
 		root content;
 	}
 
-	location /hls {
-		root content;
-		add_header Access-Control-Allow-Origin *;
-	}
-
-	location /player {
-		root content;
-		add_header Access-Control-Allow-Origin *;
+	location /.well-known/acme-challenge {
+		root html;
 	}
 
 	error_page	 500 502 503 504  /50x.html;
