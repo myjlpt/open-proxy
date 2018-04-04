@@ -37,6 +37,11 @@ server {
 	
 	location /videos {
 		root content;
+
+        if ($request_filename ~ "^.*/(.+\.(mp3|mp4))$"){
+            set $fname $1;
+            add_header Content-Disposition 'attachment; filename="$fname"';
+        }
 	}
 
 	location /.well-known/acme-challenge {
