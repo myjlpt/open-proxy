@@ -9,4 +9,4 @@
 
 ##### 安装部署, 请参考 [open-proxy 搭建教程](https://github.com/gfw-breaker/open-proxy/wiki#open-proxy-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B)
 
-##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](http://144.202.111.234:10000/fgate/), 并收藏 [网站导航](https://github.com/gfw-breaker/open-proxy/edit/master/README.md)
+##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](http://144.202.111.234:10000/fgate/), 并收藏 [网站导航](https://github.com/gfw-breaker/open-proxy/blob/master/README.md)
