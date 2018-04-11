@@ -98,8 +98,8 @@ server {
 		proxy_set_header Host imgs.ntdtv.com;
 		proxy_set_header Referer http://imgs.ntdtv.com;
 
-		add_header Access-Control-Allow-Headers '*';
-		add_header Access-Control-Allow-Origin '*';		
+		#add_header Access-Control-Allow-Headers '*';
+		#add_header Access-Control-Allow-Origin '*';		
 
 		#proxy_buffering off;
 		proxy_cache ntdimgs;
@@ -168,8 +168,8 @@ server {
 	location / {
 		proxy_pass http://stream.ntdtv.com:8080;
 
-		add_header Access-Control-Allow-Headers '*';
-		add_header Access-Control-Allow-Origin '*';		
+		#add_header Access-Control-Allow-Headers '*';
+		#add_header Access-Control-Allow-Origin '*';		
 
 		proxy_cache ntdstream;
 		proxy_cache_valid  200 90s;
@@ -184,8 +184,8 @@ server {
 	location / {
 		proxy_pass http://live.ntdimg.com;
 
-		add_header Access-Control-Allow-Headers '*';
-		add_header Access-Control-Allow-Origin '*';		
+		#add_header Access-Control-Allow-Headers '*';
+		#add_header Access-Control-Allow-Origin '*';		
 
 		proxy_cache ntdstream;
 		proxy_cache_valid  200 90s;
@@ -200,8 +200,8 @@ server {
 	location / {
 		proxy_pass http://live2.ntdimg.com;
 
-		add_header Access-Control-Allow-Headers '*';
-		add_header Access-Control-Allow-Origin '*';		
+		#add_header Access-Control-Allow-Headers '*';
+		#add_header Access-Control-Allow-Origin '*';		
 
 		proxy_cache ntdstream;
 		proxy_cache_valid  200 90s;
@@ -216,8 +216,8 @@ server {
 	location / {
 		proxy_pass http://cnhls.ntdtv.com;
 
-		add_header Access-Control-Allow-Headers '*';
-		add_header Access-Control-Allow-Origin '*';		
+		#add_header Access-Control-Allow-Headers '*';
+		#add_header Access-Control-Allow-Origin '*';		
 
 		proxy_cache ntdstream;
 		proxy_cache_valid  200 90s;
