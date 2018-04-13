@@ -2,7 +2,7 @@ proxy_cache_path /usr/local/nginx/content/cache/epochtimes levels=1:2 keys_zone=
 proxy_cache_path /usr/local/nginx/content/cache/epochtv levels=1:2 keys_zone=epochtv:10m max_size=2g inactive=7d use_temp_path=off;
 
 server {
-	listen	80;
+	listen	10080;
 
 	include spider.conf;
 
@@ -16,8 +16,8 @@ server {
 
 		sub_filter_once off;
 		sub_filter_types text; 
-		sub_filter i.epochtimes.com local_server_ip;
-		sub_filter www.epochtimes.com local_server_ip;
+		sub_filter i.epochtimes.com local_server_ip:10080;
+		sub_filter www.epochtimes.com local_server_ip:10080;
 		sub_filter www.ntdtv.com local_server_ip:8000;
 		sub_filter imgs.ntdtv.com local_server_ip:8001;
 		sub_filter media5.ntdtv.com local_server_ip:8002;
