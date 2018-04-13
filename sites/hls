@@ -10,6 +10,7 @@ server {
 	vod_mode local;
 	vod_segment_duration 10000; # 10s
 	vod_align_segments_to_key_frames on;
+	vod_hls_absolute_index_urls off;
 
 	#file handle caching / aio
 	open_file_cache max=1000 inactive=5m;
