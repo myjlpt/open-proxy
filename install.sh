@@ -89,6 +89,13 @@ chkconfig nginx on
 service nginx restart
 
 
+## deploy pages
+for f in $(ls common/info); do
+	sed -i "s/local_server_ip/$server_ip/g" common/info/$f
+done
+cp -r common/info $NGX_HOME
+
+
 ## disable iptables temparorily for testing, should enable and add rules to it in production
 service iptables stop
 chkconfig iptables off
