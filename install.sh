@@ -93,7 +93,7 @@ service nginx restart
 for f in $(ls common/info); do
 	sed -i "s/local_server_ip/$server_ip/g" common/info/$f
 done
-cp -r common/info $NGX_HOME
+cp -r common/info /usr/local/nginx/html
 
 
 ## disable iptables temparorily for testing, should enable and add rules to it in production
