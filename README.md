@@ -6,7 +6,7 @@
 
 ##### 精彩视频： [《文昭谈古论今》](https://github.com/gfw-breaker/wenzhao/blob/master/README.md) - [《时事小品》](https://github.com/gfw-breaker/ntdtv-comedy/blob/master/README.md) - [《传奇时代》](http://107.191.60.44:10000/videos/legend/) - [《风雨天地行》](http://107.191.60.44:10000/videos/fytdx/) - [《九评共产党》](http://107.191.60.44:10000/videos/jiuping/) - [《漫谈党文化》](http://107.191.60.44:10000/videos/mtdwh/) - [709维权律师](http://107.191.60.44:10000/videos/709/)
 
-##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](https://github.com/gfw-breaker/nogfw/blob/master/README.md) 
+##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](https://github.com/gfw-breaker/nogfw/blob/master/README.md) 或 [禁闻聚合](https://github.com/gfw-breaker/banned-news/blob/master/README.md)
 
 ##### 通用Web代理方案，可代理所有网站 [heroku-node-proxy](https://github.com/gfw-breaker/heroku-node-proxy#--end--) 
 
