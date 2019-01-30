@@ -6,7 +6,7 @@
 
 ##### 精彩视频： 
 #####  [《传奇时代》](http://108.160.134.41:9999/10000/videos/legend/) - [《风雨天地行》](http://108.160.134.41:9999/10000/videos/fytdx/) - [《九评共产党》](http://108.160.134.41:9999/10000/videos/jiuping/) - [《漫谈党文化》](http://108.160.134.41:9999/10000/videos/mtdwh/) - [《百年红祸》](http://108.160.134.41:9999/10000/videos/bnhh/) - &nbsp; [709维权律师大抓捕](http://108.160.134.41:9999/10000/videos/709/) 
-#####  [《文昭谈古论今》](https://github.com/gfw-breaker/wenzhao/blob/master/README.md?a01) - [《历史上的今天》](https://github.com/gfw-breaker/today-in-history/blob/master/README.md) - [《大陆新闻解读》](https://github.com/gfw-breaker/ntdtv-comedy/blob/master/README.md?a01) - [《新唐人中国禁闻》](https://github.com/gfw-breaker/ntdtv-news/blob/master/README.md?a01) - [《大纪元新闻看点》](https://github.com/gfw-breaker/news-insight/blob/master/README.md?a01) 
+#####  [《文昭谈古论今》](https://github.com/gfw-breaker/wenzhao) - [《历史上的今天》](https://github.com/gfw-breaker/today-in-history) - [《大陆新闻解读》](https://github.com/gfw-breaker/ntdtv-comedy) - [《新唐人中国禁闻》](https://github.com/gfw-breaker/ntdtv-news) - [《大纪元新闻看点》](https://github.com/gfw-breaker/news-insight) 
 
 ##### 鉴于GFW封锁不断升级, 强烈推荐使用 [一键翻墙软件](https://github.com/gfw-breaker/nogfw/blob/master/README.md) 或 [禁闻聚合](https://github.com/gfw-breaker/banned-news/blob/master/README.md)
 
